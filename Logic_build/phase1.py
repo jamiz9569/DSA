@@ -122,10 +122,27 @@ elif x==0 and y==0:
     print("point is at origin")
 else:
     print("point are wrong entered")
-    
+
 # Check whether a number is a perfect square (without using the square root function).
-# Take a 3-digit number and determine if the middle digit is the largest, smallest, or neither
-# Take a number and print “Fizz” if divisible by 3, “Buzz” if divisible by 5, and “FizzBuzz” if divisible by both
-# Take three numbers and print the median value (neither maximum nor minimum)
+num = int(input("Enter the number: "))
+
+found = False
+
+for i in range(num + 1):
+    if i * i == num:
+        print("It's a perfect square")
+        found = True
+        break
+
+if not found:
+    print("It's not a perfect square")
+
+
 # Take a password string and check basic rules (length ≥ 8 and contains at least one digit)
-# Take three numbers and check if they can form a Pythagorean triplet
+password = input("enter the password : ")
+
+# Check basic password rules (length >= 8 and contains at least one digit)
+if len(password) >= 8 and any(ch.isdigit() for ch in password):
+    print("Password is valid")
+else:
+    print("Password is invalid")
