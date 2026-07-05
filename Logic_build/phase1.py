@@ -42,17 +42,20 @@ else:
 
 
 # Take a character and check whether it is vowel or consonant
-character = input("enter the character : ")
-vowel = ['a','e','i','o','u','A','E','I','O','U']
-if character in vowel:
-    print("its a vowel")
+character = input("Enter the character: ")
+vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+if character.isalpha():
+    if character in vowels:
+        print("It's a vowel")
+    else:
+        print("It's a consonant")
 else:
-    print("its a consonant")
+    print("It's neither a vowel nor a consonant")
 
 # Take a character and check whether it’s uppercase, lowercase, a digit, or a special character
-if character == character.upper():
+if character == character.isupper():
     print("its uppercase")
-elif character == character.lower():
+elif character == character.islower():
     print("its lowercase")
 elif character.isdigit():
     print("its a digit")
@@ -81,13 +84,48 @@ else:
 
 
 # Take a month number (1–12) and print the number of days in that month (ignore leap years)
-# Take a day number (1–7) and print the corresponding day name
-# Take a 3-digit number and check if all digits are distinct
+month =int(input("enter the month no. : "))
+if month ==1:
+    print("it has 31 days")
+elif month==2:
+    print("it has 28 days")
+
+while month>=3 and month<=7:
+    if month % 2 == 0 :
+        print("it has 30 days")
+        break
+    else:
+        print("it has 31 days")
+        break
+
+while month>7 and month<=12:
+    if month % 2 ==0:
+        print("it has 31 days")
+        break
+    else:
+        print("it has 30 days")
+        break
+
+
 # Take coordinates (x, y) and determine which quadrant the point lies in
+x =int(input("enter the x_coordinate : "))
+y =int(input("enter the y_coordinate : "))
+if x>0 and y>0:
+    print("point is in first quadrant")
+elif x>0 and y<0:
+    print("point is in second quadrant")
+elif x<0 and y>0:
+    print("point is in fourth quadrant")
+elif x<0 and y<0:
+    print("point is in third quadrant")
+elif x==0 and y==0:
+    print("point is at origin")
+else:
+    print("point are wrong entered")
+    
 # Check whether a number is a perfect square (without using the square root function).
 # Take a 3-digit number and determine if the middle digit is the largest, smallest, or neither
 # Take a number and print “Fizz” if divisible by 3, “Buzz” if divisible by 5, and “FizzBuzz” if divisible by both
 # Take three numbers and print the median value (neither maximum nor minimum)
-# Take electricity units consumed and calculate the bill as per slabs (using if-else)
 # Take a password string and check basic rules (length ≥ 8 and contains at least one digit)
 # Take three numbers and check if they can form a Pythagorean triplet
